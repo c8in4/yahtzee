@@ -16,7 +16,7 @@
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   rollDice: () => (/* binding */ rollDice)\n/* harmony export */ });\nconst rollDice = () => {\n  // {\n    // this.sides = sides;\n  // }\n\n  // roll() {\n  //   // return Math.floor(Math.random() * this.sides) + 1;\n    console.log(Math.floor(Math.random() * 6) + 1);\n\n  // };\n};\n\n\n\n//# sourceURL=webpack://yahtzee/./src/dice.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   Dice: () => (/* binding */ Dice)\n/* harmony export */ });\nclass Dice {\n  constructor(){\n    this.sides = 6\n  }\n\n  rollDice() {\n    return Math.floor(Math.random() * this.sides) + 1\n  }\n}\n\n//# sourceURL=webpack://yahtzee/./src/dice.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dice_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dice.js */ \"./src/dice.js\");\n\n\nconst dice1 = (0,_dice_js__WEBPACK_IMPORTED_MODULE_0__.rollDice)();\n\n// dice1.roll()\n\n//# sourceURL=webpack://yahtzee/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dice__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dice */ \"./src/dice.js\");\n\n\nconst dice = new _dice__WEBPACK_IMPORTED_MODULE_0__.Dice\n\nfor (let i = 0; i < 10; i++) {\n  console.log(dice.rollDice())\n}\n\n//# sourceURL=webpack://yahtzee/./src/index.js?");
 
 /***/ })
 
