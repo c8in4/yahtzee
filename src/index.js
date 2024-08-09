@@ -1,5 +1,7 @@
-import { rollDice } from './dice.js';
+import { Dice } from './dice';
 
-const dice1 = rollDice();
+const dice = new Dice
 
-// dice1.roll()
+for (let i = 0; i < 10; i++) {
+  console.log(dice.rollDice())
+}
