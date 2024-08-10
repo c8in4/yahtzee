@@ -1,8 +1,6 @@
 import './style.css'
-import './createDom'
-
 import { Dice } from './diceClass';
-import { RenderDice } from './createDom';
+import { RenderDice } from './renderDice';
 
 const yahtzeeDice = []
 const rolledDice = []
