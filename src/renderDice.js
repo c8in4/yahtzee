@@ -27,6 +27,7 @@ function getDiceImg(number) {
 
 const RenderDice = (yahtzeeDice) => {
   const diceDiv = document.querySelector('.diceDiv')
+  diceDiv.innerHTML = ''
 
   yahtzeeDice.forEach(dice => {
     const diceImg = document.createElement('img')
