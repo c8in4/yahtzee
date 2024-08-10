@@ -1,19 +1,25 @@
 import './style.css'
-import { yahtzeeDice } from "./playRoundLogic";
+import './createDom'
 
-console.log('yahtzee array: ' + yahtzeeDice)
+import { Dice } from './diceClass';
+import { RenderDice } from './createDom';
 
-
+const yahtzeeDice = []
+const rolledDice = []
 const keeperDice = []
 
-keeperDice.push(+yahtzeeDice.splice(3,1))
-keeperDice.push(+yahtzeeDice.splice(0,1))
+for (let i = 0; i < 5; i++) {
+  const dice = new Dice(6)
+  yahtzeeDice.push(dice)
+}
 
-console.log('yahtzee array: ' + yahtzeeDice)
+yahtzeeDice.forEach(dice => {
+  rolledDice.push(dice.rollDice())
+})
 
-console.log(keeperDice)
-console.log(keeperDice.sort())
+console.log(rolledDice)
 
+RenderDice(rolledDice)
 
 // Dice test ###############################
 // console.log('-- START OF DICE TEST --')
