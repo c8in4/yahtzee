@@ -16,7 +16,7 @@
   \*************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  background-color: aquamarine;\n}`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://yahtzee/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  margin: 0;\n  height: 100dvh;\n  display: grid;\n  grid-template-rows: auto 1fr auto;\n  justify-items: center;\n}\n\n.diceDiv {\n  margin: 0 auto;\n  display: flex;\n  gap: 0.5rem;\n  justify-content: center;\n}\n\n.diceDiv img {\n  width: clamp(32px, 15%, 150px);\n}`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://yahtzee/./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -110,6 +110,16 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/createDom.js":
+/*!**************************!*\
+  !*** ./src/createDom.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   RenderDice: () => (/* binding */ RenderDice)\n/* harmony export */ });\n/* harmony import */ var _black_dice_dice0_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./black_dice/dice0.png */ \"./src/black_dice/dice0.png\");\n/* harmony import */ var _black_dice_dice1_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./black_dice/dice1.png */ \"./src/black_dice/dice1.png\");\n/* harmony import */ var _black_dice_dice2_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./black_dice/dice2.png */ \"./src/black_dice/dice2.png\");\n/* harmony import */ var _black_dice_dice3_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./black_dice/dice3.png */ \"./src/black_dice/dice3.png\");\n/* harmony import */ var _black_dice_dice4_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./black_dice/dice4.png */ \"./src/black_dice/dice4.png\");\n/* harmony import */ var _black_dice_dice5_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./black_dice/dice5.png */ \"./src/black_dice/dice5.png\");\n/* harmony import */ var _black_dice_dice6_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./black_dice/dice6.png */ \"./src/black_dice/dice6.png\");\n\n\n\n\n\n\n\n\nfunction getDiceImg(number) {\n  switch (number) {\n    case 1:\n      return _black_dice_dice1_png__WEBPACK_IMPORTED_MODULE_1__\n    case 2:\n      return _black_dice_dice2_png__WEBPACK_IMPORTED_MODULE_2__\n    case 3:\n      return _black_dice_dice3_png__WEBPACK_IMPORTED_MODULE_3__\n    case 4:\n      return _black_dice_dice4_png__WEBPACK_IMPORTED_MODULE_4__\n    case 5:\n      return _black_dice_dice5_png__WEBPACK_IMPORTED_MODULE_5__\n    case 6:\n      return _black_dice_dice6_png__WEBPACK_IMPORTED_MODULE_6__\n    default:\n      return _black_dice_dice0_png__WEBPACK_IMPORTED_MODULE_0__\n  }\n}\n\nconst RenderDice = (yahtzeeDice = [1, 2, 3, 4, 5]) => {\n\n  const mainElement = document.querySelector('main')\n\n  const diceDiv = document.createElement('div')\n  diceDiv.classList.add('diceDiv')\n\n  yahtzeeDice.forEach(dice => {\n    const diceImg = document.createElement('img')\n    diceImg.src = getDiceImg(dice)\n\n    diceImg.dataset.value = dice\n    diceDiv.appendChild(diceImg)\n  })\n\n\n  mainElement.append(diceDiv)\n}\n\n\n\n\n//# sourceURL=webpack://yahtzee/./src/createDom.js?");
+
+/***/ }),
+
 /***/ "./src/diceClass.js":
 /*!**************************!*\
   !*** ./src/diceClass.js ***!
@@ -126,17 +136,77 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _playRoundLogic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./playRoundLogic */ \"./src/playRoundLogic.js\");\n\n\n\nconsole.log('yahtzee array: ' + _playRoundLogic__WEBPACK_IMPORTED_MODULE_1__.yahtzeeDice)\n\n\nconst keeperDice = []\n\nkeeperDice.push(+_playRoundLogic__WEBPACK_IMPORTED_MODULE_1__.yahtzeeDice.splice(3,1))\nkeeperDice.push(+_playRoundLogic__WEBPACK_IMPORTED_MODULE_1__.yahtzeeDice.splice(0,1))\n\nconsole.log('yahtzee array: ' + _playRoundLogic__WEBPACK_IMPORTED_MODULE_1__.yahtzeeDice)\n\nconsole.log(keeperDice)\nconsole.log(keeperDice.sort())\n\n\n// Dice test ###############################\n// console.log('-- START OF DICE TEST --')\n// import { Dice } from \"./diceClass\";\n\n// const dice = new Dice(6)\n\n// console.log('first roll: ' + dice.rollDice())\n// dice.switchKeepDice()\n// console.log('second roll: ' + dice.rollDice())\n// dice.switchKeepDice()\n// console.log('third roll: ' + dice.rollDice())\n// #########################################\n\n\n//# sourceURL=webpack://yahtzee/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _createDom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createDom */ \"./src/createDom.js\");\n/* harmony import */ var _diceClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./diceClass */ \"./src/diceClass.js\");\n\n\n\n\n\n\nconst yahtzeeDice = []\nconst rolledDice = []\nconst keeperDice = []\n\nfor (let i = 0; i < 5; i++) {\n  const dice = new _diceClass__WEBPACK_IMPORTED_MODULE_2__.Dice(6)\n  yahtzeeDice.push(dice)\n}\n\nyahtzeeDice.forEach(dice => {\n  rolledDice.push(dice.rollDice())\n})\n\nconsole.log(rolledDice)\n\n;(0,_createDom__WEBPACK_IMPORTED_MODULE_1__.RenderDice)(rolledDice)\n\n// Dice test ###############################\n// console.log('-- START OF DICE TEST --')\n// import { Dice } from \"./diceClass\";\n\n// const dice = new Dice(6)\n\n// console.log('first roll: ' + dice.rollDice())\n// dice.switchKeepDice()\n// console.log('second roll: ' + dice.rollDice())\n// dice.switchKeepDice()\n// console.log('third roll: ' + dice.rollDice())\n// #########################################\n\n\n//# sourceURL=webpack://yahtzee/./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/playRoundLogic.js":
-/*!*******************************!*\
-  !*** ./src/playRoundLogic.js ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./src/black_dice/dice0.png":
+/*!**********************************!*\
+  !*** ./src/black_dice/dice0.png ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   yahtzeeDice: () => (/* binding */ yahtzeeDice)\n/* harmony export */ });\n/* harmony import */ var _diceClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./diceClass */ \"./src/diceClass.js\");\n\n\nlet yahtzeeDice = []\nlet keeperDice = []\n\nlet numberOfDiceToRoll = 5 - keeperDice.length\n\nyahtzeeDice = keeperDice\n\nfor (let i = 0; i < numberOfDiceToRoll; i++) {\n  const dice = new _diceClass__WEBPACK_IMPORTED_MODULE_0__.Dice(6)\n  yahtzeeDice.push(dice.rollDice())\n}\n\n\n\n\n//# sourceURL=webpack://yahtzee/./src/playRoundLogic.js?");
+eval("module.exports = __webpack_require__.p + \"47bbd86d5cc7f94a664e.png\";\n\n//# sourceURL=webpack://yahtzee/./src/black_dice/dice0.png?");
+
+/***/ }),
+
+/***/ "./src/black_dice/dice1.png":
+/*!**********************************!*\
+  !*** ./src/black_dice/dice1.png ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"899d033fc4e27cb6246a.png\";\n\n//# sourceURL=webpack://yahtzee/./src/black_dice/dice1.png?");
+
+/***/ }),
+
+/***/ "./src/black_dice/dice2.png":
+/*!**********************************!*\
+  !*** ./src/black_dice/dice2.png ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"6e2cb8936da2c5c86cf4.png\";\n\n//# sourceURL=webpack://yahtzee/./src/black_dice/dice2.png?");
+
+/***/ }),
+
+/***/ "./src/black_dice/dice3.png":
+/*!**********************************!*\
+  !*** ./src/black_dice/dice3.png ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"6380ff25d354e47dd11b.png\";\n\n//# sourceURL=webpack://yahtzee/./src/black_dice/dice3.png?");
+
+/***/ }),
+
+/***/ "./src/black_dice/dice4.png":
+/*!**********************************!*\
+  !*** ./src/black_dice/dice4.png ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"63b518957b9a6a7fa431.png\";\n\n//# sourceURL=webpack://yahtzee/./src/black_dice/dice4.png?");
+
+/***/ }),
+
+/***/ "./src/black_dice/dice5.png":
+/*!**********************************!*\
+  !*** ./src/black_dice/dice5.png ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"e4626799e5936dfe76eb.png\";\n\n//# sourceURL=webpack://yahtzee/./src/black_dice/dice5.png?");
+
+/***/ }),
+
+/***/ "./src/black_dice/dice6.png":
+/*!**********************************!*\
+  !*** ./src/black_dice/dice6.png ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"539760d87fd05b035c85.png\";\n\n//# sourceURL=webpack://yahtzee/./src/black_dice/dice6.png?");
 
 /***/ })
 
@@ -191,6 +261,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -205,6 +287,29 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
