@@ -26,11 +26,7 @@ function getDiceImg(number) {
 }
 
 const RenderDice = (yahtzeeDice) => {
-
-  const mainElement = document.querySelector('main')
-
-  const diceDiv = document.createElement('div')
-  diceDiv.classList.add('diceDiv')
+  const diceDiv = document.querySelector('.diceDiv')
 
   yahtzeeDice.forEach(dice => {
     const diceImg = document.createElement('img')
@@ -38,9 +34,6 @@ const RenderDice = (yahtzeeDice) => {
     diceImg.dataset.value = dice
     diceDiv.appendChild(diceImg)
   })
-
-
-  mainElement.append(diceDiv)
 }
 
 export { RenderDice }
