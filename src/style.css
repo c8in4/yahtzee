@@ -11,3 +11,14 @@ body {
   grid-template-rows: auto 1fr auto;
   justify-items: center;
 }
+
+.diceDiv {
+  margin: 0 auto;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.diceDiv img {
+  width: clamp(32px, 15%, 150px);
+}
