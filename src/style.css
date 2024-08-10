@@ -1,3 +1,9 @@
+:root {
+  --black-clr: #000000;
+  --accent-clr: #ff0000;
+  --grey-clr: #727171;
+}
+
 *,
 *::before,
 *::after {
@@ -13,7 +19,7 @@ body {
 }
 
 .diceDiv {
-  margin: 0 auto;
+  margin: 1rem auto;
   display: flex;
   gap: 0.5rem;
   justify-content: center;
@@ -21,4 +27,24 @@ body {
 
 .diceDiv img {
   width: clamp(32px, 15%, 150px);
+}
+
+.buttonDiv{
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background-color: var(--black-clr);
+  color: var(--accent-clr);
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+button:hover {
+  outline: var(--grey-clr) solid 0.2rem;
 }
