@@ -1,3 +1,4 @@
+import './style.css'
 import { yahtzeeDice } from "./playRoundLogic";
 
 console.log('yahtzee array: ' + yahtzeeDice)
