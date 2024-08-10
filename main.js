@@ -10,13 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/dice.js":
-/*!*********************!*\
-  !*** ./src/dice.js ***!
-  \*********************/
+/***/ "./src/diceClass.js":
+/*!**************************!*\
+  !*** ./src/diceClass.js ***!
+  \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   Dice: () => (/* binding */ Dice)\n/* harmony export */ });\nclass Dice {\n  constructor(){\n    this.sides = 6\n  }\n\n  rollDice() {\n    return Math.floor(Math.random() * this.sides) + 1\n  }\n}\n\n//# sourceURL=webpack://yahtzee/./src/dice.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   Dice: () => (/* binding */ Dice)\n/* harmony export */ });\nclass Dice {\n  constructor(sides){\n    this._sides = sides\n    this._keepDice = false\n  }\n\n  switchKeepDice() {\n    this._keepDice = !this._keepDice\n  }\n\n  rollDice() {\n    if (this._keepDice) return \n    else return randomDiceNumber(this._sides)\n  }\n}\n\nfunction randomDiceNumber(numberOfSides) {\n  return Math.floor(Math.random() * numberOfSides) + 1\n}\n\n//# sourceURL=webpack://yahtzee/./src/diceClass.js?");
 
 /***/ }),
 
@@ -26,7 +26,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dice__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dice */ \"./src/dice.js\");\n\n\nconst dice = new _dice__WEBPACK_IMPORTED_MODULE_0__.Dice\n\nfor (let i = 0; i < 10; i++) {\n  console.log(dice.rollDice())\n}\n\n//# sourceURL=webpack://yahtzee/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _playRoundLogic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./playRoundLogic */ \"./src/playRoundLogic.js\");\n\n\nconsole.log('yahtzee array: ' + _playRoundLogic__WEBPACK_IMPORTED_MODULE_0__.yahtzeeDice)\n\n\nconst keeperDice = []\n\nkeeperDice.push(+_playRoundLogic__WEBPACK_IMPORTED_MODULE_0__.yahtzeeDice.splice(3,1))\nkeeperDice.push(+_playRoundLogic__WEBPACK_IMPORTED_MODULE_0__.yahtzeeDice.splice(0,1))\n\nconsole.log('yahtzee array: ' + _playRoundLogic__WEBPACK_IMPORTED_MODULE_0__.yahtzeeDice)\n\nconsole.log(keeperDice)\nconsole.log(keeperDice.sort())\n\n\n// Dice test ###############################\n// console.log('-- START OF DICE TEST --')\n// import { Dice } from \"./diceClass\";\n\n// const dice = new Dice(6)\n\n// console.log('first roll: ' + dice.rollDice())\n// dice.switchKeepDice()\n// console.log('second roll: ' + dice.rollDice())\n// dice.switchKeepDice()\n// console.log('third roll: ' + dice.rollDice())\n// #########################################\n\n\n//# sourceURL=webpack://yahtzee/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/playRoundLogic.js":
+/*!*******************************!*\
+  !*** ./src/playRoundLogic.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   yahtzeeDice: () => (/* binding */ yahtzeeDice)\n/* harmony export */ });\n/* harmony import */ var _diceClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./diceClass */ \"./src/diceClass.js\");\n\n\nlet yahtzeeDice = []\nlet keeperDice = []\n\nlet numberOfDiceToRoll = 5 - keeperDice.length\n\nyahtzeeDice = keeperDice\n\nfor (let i = 0; i < numberOfDiceToRoll; i++) {\n  const dice = new _diceClass__WEBPACK_IMPORTED_MODULE_0__.Dice(6)\n  yahtzeeDice.push(dice.rollDice())\n}\n\n\n\n\n//# sourceURL=webpack://yahtzee/./src/playRoundLogic.js?");
 
 /***/ })
 
