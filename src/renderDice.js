@@ -31,8 +31,12 @@ const RenderDice = (yahtzeeDice) => {
 
   yahtzeeDice.forEach(dice => {
     const diceImg = document.createElement('img')
-    diceImg.src = getDiceImg(dice)
-    diceImg.dataset.value = dice
+    const diceValue = dice.rollDice()
+    const diceKeeperState = dice.keepDice
+    
+    diceImg.src = getDiceImg(diceValue)
+    diceImg.dataset.value = diceValue
+    diceImg.dataset.keeper = diceKeeperState
     diceDiv.appendChild(diceImg)
   })
 }

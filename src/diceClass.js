@@ -1,15 +1,15 @@
 export class Dice {
   constructor(sides){
     this._sides = sides
-    this._keepDice = false
+    this.keepDice = false
   }
 
   switchKeepDice() {
-    this._keepDice = !this._keepDice
+    this.keepDice = !this.keepDice
   }
 
   rollDice() {
-    if (this._keepDice) return 
+    if (this.keepDice) return 
     else return getRandomDiceNumber(this._sides)
   }
 }

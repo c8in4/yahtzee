@@ -11,13 +11,13 @@ for (let i = 0; i < 5; i++) {
   yahtzeeDice.push(dice)
 }
 
-yahtzeeDice.forEach(dice => {
-  rolledDice.push(dice.rollDice())
-})
+// yahtzeeDice.forEach(dice => {
+//   rolledDice.push(dice.rollDice())
+// })
 
-console.log(rolledDice)
+// console.log(rolledDice)
 
-RenderDice(rolledDice)
+RenderDice(yahtzeeDice)
 
 // Dice test ###############################
 // console.log('-- START OF DICE TEST --')
