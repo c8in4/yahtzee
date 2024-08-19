@@ -9,28 +9,9 @@ for (let i = 0; i < 5; i++) {
   yahtzeeDice.push(dice)
 }
 
-// yahtzeeDice.forEach(dice => {
-//   rolledDice.push(dice.rollDice())
-// })
-
-// console.log(rolledDice)
-
-console.log(yahtzeeDice)
-
-// srcst
-
+const rollDiceButton = document.querySelector('#rollButton')
+rollDiceButton.addEventListener('click', () => {
+  RenderDice(yahtzeeDice)
+})
 
 RenderDice(yahtzeeDice)
-
-// Dice test ###############################
-// console.log('-- START OF DICE TEST --')
-// import { Dice } from "./diceClass";
-
-// const dice = new Dice(6)
-
-// console.log('first roll: ' + dice.rollDice())
-// dice.switchKeepDice()
-// console.log('second roll: ' + dice.rollDice())
-// dice.switchKeepDice()
-// console.log('third roll: ' + dice.rollDice())
-// #########################################
