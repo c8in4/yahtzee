@@ -26,7 +26,12 @@ body {
 }
 
 .diceDiv img {
+  border-radius: 10%;
   width: clamp(32px, 15%, 150px);
+}
+
+.diceDiv img:hover {
+  background-color: red;
 }
 
 .buttonDiv{
@@ -41,19 +46,18 @@ button {
   background-color: var(--black-clr);
   color: var(--accent-clr);
   font-weight: bold;
-  font-size: 1.2rem;
   text-transform: uppercase;
 }
 
-span {
-  position: relative;
+button + button {
+  margin-left: 1rem;
 }
 
 .keepDice {
-  background-color: #ff0000;
-  border-radius: 10%;
+  background-color: var(--grey-clr);
+  opacity: 0.75;
 }
 
 button:hover {
-  outline: var(--grey-clr) solid 0.2rem;
+  outline: red solid 0.1rem;
 }

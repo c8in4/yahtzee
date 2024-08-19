@@ -29,9 +29,24 @@ function getDiceImg(number) {
 
 const diceDiv = document.querySelector('.diceDiv')
 
+diceDiv.addEventListener('click', (e) => {
+  const dice = e.target
+  const index = dice.dataset.index
+  if (index && dice.src != Dice0) yahtzeeDice[index].switchKeepDice()
+  RenderDice()
+})
+
 const RollDice = () => {
   yahtzeeDice.forEach(dice => {
     dice.rollDice()
+  })
+  RenderDice()
+}
+
+const ResetDice = () => {
+  yahtzeeDice.forEach(dice => {
+    dice.value = 0
+    dice.keepDiceState = false
   })
   RenderDice()
 }
@@ -40,26 +55,11 @@ const RenderDice = () => {
   diceDiv.innerHTML = ''
   yahtzeeDice.forEach((dice, index) => {
     const diceImg = document.createElement('img')
-
     diceImg.src = getDiceImg(dice.value)
     diceImg.dataset.index = index
-    if (dice.keepDiceState) {
-      diceImg.classList.add('keepDice')
-    }
-
+    if (dice.keepDiceState) diceImg.classList.add('keepDice')
     diceDiv.appendChild(diceImg)
   })
 }
 
-
-diceDiv.addEventListener('click', (e) => {
-  const dice = e.target
-  const index = dice.dataset.index
-  // const keeper = dice.dataset.keepState
-
-  if (index) yahtzeeDice[index].switchKeepDice()
-
-  RenderDice()
-})
-
-export { RenderDice, RollDice }
+export { RenderDice, RollDice, ResetDice }

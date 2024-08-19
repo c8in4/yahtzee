@@ -1,9 +1,10 @@
 import './style.css'
-import { RenderDice, RollDice } from './domController';
+import { RenderDice, ResetDice, RollDice } from './domController';
 
 RenderDice()
 
 const rollDiceButton = document.querySelector('#rollButton')
-rollDiceButton.addEventListener('click', () => {
-  RollDice()
-})
+rollDiceButton.addEventListener('click', RollDice)
+
+const resetDiceButton = document.querySelector('#resetButton')
+resetDiceButton.addEventListener('click', ResetDice)
