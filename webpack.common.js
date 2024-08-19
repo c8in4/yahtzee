@@ -1,18 +1,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { watchFile } = require('fs');
 
 module.exports = {
   entry: './src/index.js',
-  mode: 'development',
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true
-  },
-  devServer: {
-    watchFiles: ['./src/*.html']
-  },
+
+  plugins: [
+    new HtmlWebpackPlugin(
+      {
+        template: './src/index.html'
+      }
+    )
+  ],
   module: {
     rules: [
       {
@@ -25,11 +23,9 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin(
-      {
-        template: './src/index.html'
-      }
-    )
-  ]
-};
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
+    clean: true
+  },
+}
