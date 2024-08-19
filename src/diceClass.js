@@ -1,19 +1,23 @@
 export class Dice {
-  constructor(sides){
+
+  value
+
+  constructor(sides) {
     this._sides = sides
-    this.keepDice = false
+    this.keepDiceState = false
   }
 
   switchKeepDice() {
-    this.keepDice = !this.keepDice
+    this.keepDiceState = !this.keepDiceState
   }
 
   rollDice() {
-    if (this.keepDice) return 
-    else return getRandomDiceNumber(this._sides)
+    this.value = this.keepDiceState
+      ? this.value
+      : this._getRandomDiceNumber()
   }
-}
 
-function getRandomDiceNumber(numberOfSides) {
-  return Math.floor(Math.random() * numberOfSides) + 1
+  _getRandomDiceNumber() {
+    return Math.floor(Math.random() * this._sides) + 1
+  }
 }

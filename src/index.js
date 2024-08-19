@@ -3,8 +3,6 @@ import { Dice } from './diceClass';
 import { RenderDice } from './renderDice';
 
 const yahtzeeDice = []
-const rolledDice = []
-const keeperDice = []
 
 for (let i = 0; i < 5; i++) {
   const dice = new Dice(6)
@@ -16,6 +14,11 @@ for (let i = 0; i < 5; i++) {
 // })
 
 // console.log(rolledDice)
+
+console.log(yahtzeeDice)
+
+// srcst
+
 
 RenderDice(yahtzeeDice)
 
