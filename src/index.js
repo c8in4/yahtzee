@@ -1,17 +1,9 @@
 import './style.css'
-import { Dice } from './diceClass';
-import { RenderDice } from './renderDice';
+import { RenderDice, RollDice } from './domController';
 
-const yahtzeeDice = []
-
-for (let i = 0; i < 5; i++) {
-  const dice = new Dice(6)
-  yahtzeeDice.push(dice)
-}
+RenderDice()
 
 const rollDiceButton = document.querySelector('#rollButton')
 rollDiceButton.addEventListener('click', () => {
-  RenderDice(yahtzeeDice)
+  RollDice()
 })
-
-RenderDice(yahtzeeDice)

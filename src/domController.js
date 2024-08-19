@@ -6,6 +6,8 @@ import Dice4 from './black_dice/dice4.png'
 import Dice5 from './black_dice/dice5.png'
 import Dice6 from './black_dice/dice6.png'
 
+import { yahtzeeDice } from './yahtzeeDice'
+
 function getDiceImg(number) {
   switch (number) {
     case 1:
@@ -25,22 +27,39 @@ function getDiceImg(number) {
   }
 }
 
-const RenderDice = (yahtzeeDice) => {
-  const diceDiv = document.querySelector('.diceDiv')
-  diceDiv.innerHTML = ''
+const diceDiv = document.querySelector('.diceDiv')
 
-  yahtzeeDice.forEach((dice, index) => {
+const RollDice = () => {
+  yahtzeeDice.forEach(dice => {
     dice.rollDice()
-    const diceValue = dice.value
-    
-    const diceImg = document.createElement('img')
-    diceImg.addEventListener('click', () => { dice.switchKeepDice() })
-    diceImg.src = getDiceImg(diceValue)
-    diceImg.dataset.index = index
-    diceDiv.appendChild(diceImg)
   })
-
-  console.log(yahtzeeDice)
+  RenderDice()
 }
 
-export { RenderDice }
+const RenderDice = () => {
+  diceDiv.innerHTML = ''
+  yahtzeeDice.forEach((dice, index) => {
+    const diceImg = document.createElement('img')
+
+    diceImg.src = getDiceImg(dice.value)
+    diceImg.dataset.index = index
+    if (dice.keepDiceState) {
+      diceImg.classList.add('keepDice')
+    }
+
+    diceDiv.appendChild(diceImg)
+  })
+}
+
+
+diceDiv.addEventListener('click', (e) => {
+  const dice = e.target
+  const index = dice.dataset.index
+  // const keeper = dice.dataset.keepState
+
+  if (index) yahtzeeDice[index].switchKeepDice()
+
+  RenderDice()
+})
+
+export { RenderDice, RollDice }
