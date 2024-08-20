@@ -29,6 +29,12 @@ function getDiceImg(number) {
 
 const diceDiv = document.querySelector('.diceDiv')
 
+///////////////////////////
+// to put into a seperate function??
+let rollsPerTurn = 3
+const rollsLeftSpan = document.querySelector('#rollsLeft')
+///////////////////////////
+
 diceDiv.addEventListener('click', (e) => {
   const dice = e.target
   const index = dice.dataset.index
@@ -37,10 +43,18 @@ diceDiv.addEventListener('click', (e) => {
 })
 
 const RollDice = () => {
-  yahtzeeDice.forEach(dice => {
-    dice.rollDice()
-  })
-  RenderDice()
+  if (rollsPerTurn > 0) {
+    for (let i = 0; i < 5; i++) {
+
+      yahtzeeDice.forEach(dice => {
+        dice.rollDice()
+      })
+      RenderDice()
+
+    }
+    rollsPerTurn--
+    RenderDice()
+  }
 }
 
 const ResetDice = () => {
@@ -48,6 +62,7 @@ const ResetDice = () => {
     dice.value = 0
     dice.keepDiceState = false
   })
+  rollsPerTurn = 3
   RenderDice()
 }
 
@@ -60,6 +75,7 @@ const RenderDice = () => {
     if (dice.keepDiceState) diceImg.classList.add('keepDice')
     diceDiv.appendChild(diceImg)
   })
+  rollsLeftSpan.textContent = rollsPerTurn
 }
 
 export { RenderDice, RollDice, ResetDice }

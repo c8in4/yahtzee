@@ -8,6 +8,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body {
@@ -16,6 +17,11 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   justify-items: center;
+}
+
+.infoDiv {
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 .diceDiv {
