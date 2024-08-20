@@ -1,7 +1,7 @@
 import './style.css'
-import { RenderDice, ResetDice, RollDice } from './domController';
+import { ResetDice, RollDice } from './domController';
 
-RenderDice()
+ResetDice()
 
 const rollDiceButton = document.querySelector('#rollButton')
 rollDiceButton.addEventListener('click', RollDice)

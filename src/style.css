@@ -61,7 +61,7 @@ button + button {
 
 .keepDice {
   background-color: var(--grey-clr);
-  opacity: 0.75;
+  opacity: 0.5;
 }
 
 button:hover {

@@ -26,15 +26,19 @@ function getDiceImg(number) {
       return Dice0
   }
 }
+function diceRollAnimation() {
+  const diceRollAnimation = setInterval(() => {
+    yahtzeeDice.forEach(dice => {
+      dice.rollDice()
+    })
+    RenderDice()
+    setTimeout(() => {
+      clearInterval(diceRollAnimation)
+    }, 750)
+  }, 150)
+}
 
 const diceDiv = document.querySelector('.diceDiv')
-
-///////////////////////////
-// to put into a seperate function??
-let rollsPerTurn = 3
-const rollsLeftSpan = document.querySelector('#rollsLeft')
-///////////////////////////
-
 diceDiv.addEventListener('click', (e) => {
   const dice = e.target
   const index = dice.dataset.index
@@ -42,18 +46,12 @@ diceDiv.addEventListener('click', (e) => {
   RenderDice()
 })
 
+let numberOfRollsLeft = 3
+
 const RollDice = () => {
-  if (rollsPerTurn > 0) {
-    for (let i = 0; i < 5; i++) {
-
-      yahtzeeDice.forEach(dice => {
-        dice.rollDice()
-      })
-      RenderDice()
-
-    }
-    rollsPerTurn--
-    RenderDice()
+  if (numberOfRollsLeft > 0) {
+    diceRollAnimation()
+    numberOfRollsLeft--
   }
 }
 
@@ -62,12 +60,13 @@ const ResetDice = () => {
     dice.value = 0
     dice.keepDiceState = false
   })
-  rollsPerTurn = 3
+  numberOfRollsLeft = 3
   RenderDice()
 }
 
 const RenderDice = () => {
   diceDiv.innerHTML = ''
+  const rollsLeftSpan = document.querySelector('#rollsLeft')
   yahtzeeDice.forEach((dice, index) => {
     const diceImg = document.createElement('img')
     diceImg.src = getDiceImg(dice.value)
@@ -75,7 +74,7 @@ const RenderDice = () => {
     if (dice.keepDiceState) diceImg.classList.add('keepDice')
     diceDiv.appendChild(diceImg)
   })
-  rollsLeftSpan.textContent = rollsPerTurn
+  rollsLeftSpan.textContent = numberOfRollsLeft
 }
 
-export { RenderDice, RollDice, ResetDice }
+export { RollDice, ResetDice }
