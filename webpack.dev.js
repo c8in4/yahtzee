@@ -9,10 +9,10 @@ module.exports = merge(common, {
   },
   module: {
     rules: [
-      {
-        test: /\.html$/i,
-        loader: "html-loader",
-      },
+      // {
+      //   test: /\.html$/i,
+      //   loader: "html-loader",
+      // },
     ]
   }
 })
