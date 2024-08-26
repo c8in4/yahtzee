@@ -1,12 +1,12 @@
-import Dice0 from './black_dice/dice0.png'
-import Dice1 from './black_dice/dice1.png'
-import Dice2 from './black_dice/dice2.png'
-import Dice3 from './black_dice/dice3.png'
-import Dice4 from './black_dice/dice4.png'
-import Dice5 from './black_dice/dice5.png'
-import Dice6 from './black_dice/dice6.png'
+import Dice0 from "./black_dice/dice0.png"
+import Dice1 from "./black_dice/dice1.png"
+import Dice2 from "./black_dice/dice2.png"
+import Dice3 from "./black_dice/dice3.png"
+import Dice4 from "./black_dice/dice4.png"
+import Dice5 from "./black_dice/dice5.png"
+import Dice6 from "./black_dice/dice6.png"
 
-import { yahtzeeDice } from './yahtzeeDice'
+import { yahtzeeDice } from "./yahtzeeDice"
 
 function getDiceImg(number) {
   switch (number) {
@@ -28,7 +28,7 @@ function getDiceImg(number) {
 }
 function diceRollAnimation() {
   const diceRollAnimation = setInterval(() => {
-    yahtzeeDice.forEach(dice => {
+    yahtzeeDice.forEach((dice) => {
       dice.rollDice()
     })
     RenderDice()
@@ -38,8 +38,8 @@ function diceRollAnimation() {
   }, 150)
 }
 
-const diceDiv = document.querySelector('.diceDiv')
-diceDiv.addEventListener('click', (e) => {
+const diceDiv = document.querySelector(".diceDiv")
+diceDiv.addEventListener("click", (e) => {
   const dice = e.target
   const index = dice.dataset.index
   if (index && dice.src != Dice0) yahtzeeDice[index].switchKeepDice()
@@ -56,7 +56,7 @@ const RollDice = () => {
 }
 
 const ResetDice = () => {
-  yahtzeeDice.forEach(dice => {
+  yahtzeeDice.forEach((dice) => {
     dice.value = 0
     dice.keepDiceState = false
   })
@@ -65,13 +65,13 @@ const ResetDice = () => {
 }
 
 const RenderDice = () => {
-  diceDiv.innerHTML = ''
-  const rollsLeftSpan = document.querySelector('#rollsLeft')
+  diceDiv.innerHTML = ""
+  const rollsLeftSpan = document.querySelector("#rollsLeft")
   yahtzeeDice.forEach((dice, index) => {
-    const diceImg = document.createElement('img')
+    const diceImg = document.createElement("img")
     diceImg.src = getDiceImg(dice.value)
     diceImg.dataset.index = index
-    if (dice.keepDiceState) diceImg.classList.add('keepDice')
+    if (dice.keepDiceState) diceImg.classList.add("keepDice")
     diceDiv.appendChild(diceImg)
   })
   rollsLeftSpan.textContent = numberOfRollsLeft

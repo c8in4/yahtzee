@@ -1,4 +1,4 @@
-import { Dice } from './diceClass';
+import { Dice } from "./diceClass"
 
 const yahtzeeDice = []
 

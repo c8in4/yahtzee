@@ -1,5 +1,4 @@
 export class Dice {
-
   value
 
   constructor(sides) {
@@ -12,9 +11,7 @@ export class Dice {
   }
 
   rollDice() {
-    this.value = this.keepDiceState
-      ? this.value
-      : this._getRandomDiceNumber()
+    this.value = this.keepDiceState ? this.value : this._getRandomDiceNumber()
   }
 
   _getRandomDiceNumber() {
